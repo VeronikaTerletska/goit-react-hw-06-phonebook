@@ -5,6 +5,10 @@ import { deleteContact } from 'redux/ContactSlice';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
+  //  const onDeleteContact = idContact => {
+  //    dispatch(deleteContact(idContact.target.value));
+  //  };
+
   return (
     <Item>
       <p>

@@ -6,6 +6,12 @@ import { setFilter } from 'redux/FilterSlice';
 export const Filter = () => {
   const filter = useSelector(state => state.filter.filter);
   const dispatch = useDispatch();
+  const handleChangeFilter = evt => {
+    const filter = evt.target.value;
+
+    dispatch(setFilter(filter));
+  };
+
   return (
     <div>
       <Text>Find contacts by name</Text>
@@ -15,7 +21,7 @@ export const Filter = () => {
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         placeholder="Search contact"
         value={filter}
-        onChange={evt => dispatch(setFilter(evt.target.value))}
+        onChange={handleChangeFilter}
       />
     </div>
   );
